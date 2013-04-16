@@ -1,4 +1,4 @@
-status
+OJT Project
 ======
 
-Offerchat Heartbeat Checker
+Offerchat Heartbeat Checker \m/
