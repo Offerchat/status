@@ -1,4 +1,4 @@
 OJT Project
 ======
 
-Offerchat Heartbeat Checker \m/
+Offerchat Status Monitoring \m/

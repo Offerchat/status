@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ojtproject</title>
+  <title>Offerchat Status</title>
+
+
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <%= favicon_link_tag %>
+
 </head>
 <body>
-	
+
+
+<div class='midlogo'>
+<center>
+<%= link_to image_tag("logo.png"), 'https://www.offerchat.com/' %>
+</center>
+</div>
+
 <%= yield %>
+
+
+<footer>
+
+<div class='container'>
+	<div class='grid-12'>
+		<span class='fright'>
+			Copyright &copy;
+			<%= link_to "Offerchat Inc.", 'https://www.offerchat.com/' %>
+			All Rights Reserved.
+		</span>
+
+		<%= image_tag("footer-logo.png", :width => '150') %>
+		
+	</div>
+</div>
+
+</footer>
 
 </body>
 </html>
