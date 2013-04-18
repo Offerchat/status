@@ -1,17 +1,18 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
 gem 'rails', '3.2.1'
 
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+#gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
-  gem 'sqlite3'
-end
+gem 'sqlite3', :group => [:development, :test]
 group :production do
+  gem 'thin'
   gem 'pg'
 end
+
+gem 'activeadmin'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -25,8 +26,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
+gem 'jquery-rails','>=0.2.5'
+gem 'omniauth-facebook', '1.4.0'
+gem 'simple_form'
+gem "simple_calendar", "~> 0.1.5"
+gem 'rails-i18n'
+gem 'validates_timeliness', '~> 3.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

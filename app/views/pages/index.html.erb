@@ -1,0 +1,153 @@
+<div id="templatemo_header">
+    <div id="site_title"><h1><%= link_to "ConDocto℞", pages_path %></h1></div>
+</div>
+<div id="templatemo_main">
+    <div id="content"> 
+		<div id="home" class="section">
+        	
+			<div id="home_about" class="box">
+           	  <h4><strong><em>Bringing your doctor closer to you.</em></strong></h4>
+                <p>Have you ever tried going to the hospital and you  suddenly found out that the doctor is <strong>OUT</strong>?<br />
+                </p>
+                <p>Have you ever tried falling in line for your son's checkup and end up waiting  for nothing because the doctor is <strong>OUT</strong>?!<br />
+                </p>
+                <p>Have you ever tried going to the clinic and was denied in a millisecond because  the doctor is <strong>OUT</strong>?!!<br />
+                </p>
+                <p>Do you hate the doctor for being <strong>OUT</strong>?!!!<br />
+                </p>
+                
+                <p><strong>Worry no more</strong> coz' here comes <strong>ConDoctor</strong>.</p>
+               
+          </div>
+            
+            <div id="home_gallery" class="box no_mr">
+
+                <a href="assets/gallery/01-l.jpg" title="Here in ConDoctor, we care."  rel="lightbox[gallery]" ><%= image_tag "gallery/01.jpg"%> </a>
+                <a href="assets/gallery/02-l.jpg" rel="lightbox[gallery]" title="ConDoctor offers you a life filled with good health." ><%= image_tag "gallery/02.jpg"%></a>
+                <a href="assets/gallery/03-l.jpg" rel="lightbox[gallery]" class="no_mr" title = "Wide range of specializations of reliable and hot doctors."><%= image_tag "gallery/03.jpg"%></a>
+                <a href="assets/gallery/04-l.jpg" rel="lightbox[gallery]" title="We offer you a life filled with positivity."><%= image_tag "gallery/04.jpg"%></a>
+                <a href="assets/gallery/05-l.jpg" rel="lightbox[gallery]" title="ConDoctor has doctorsall throughoutthe Philippines."><%= image_tag "gallery/05.jpg"%></a>
+                <a href="assets/gallery/06-l.jpg" rel="lightbox[gallery]" class="no_mr" title="With an easy to use interface, you’ll be healed in no time."><%= image_tag "gallery/06.jpg"%></a>
+                
+            </div>
+
+            <div class="box home_box1 color1">
+            <% if current_user %>
+              <%= link_to current_user.image, "/auth/facebook",id: "sign_in" %>
+            <% else %> 
+             <%= link_to image_tag("login_butt.png"), "/auth/facebook",id: "sign_in" %>
+            <% end %>
+            </div>
+
+            <div class="box home_box1 color2">
+                <a href="#aboutus"><img src="assets/about_butt.png" alt="Testimonial" /></a>
+                <!-- <a href="#aboutus"><%= image_tag "about_butt.png"%></a> -->
+            </div>
+            
+            <div class="box home_box2 color3">
+            	<div id="social_links">
+                    <a href="http://www.facebook.com/pumpme2010"><%= image_tag "facebook.png"%> </a>
+                    <a href="http://www.flickr.com/"><%= image_tag "flickr.png"%></a>
+                    <a href="http://twitter.com/jhlbanz4threeee"><%= image_tag "twitter.png"%></a>
+                    <a href="http://www.youtube.com/mharkiecabanlit"><%= image_tag "youtube.png"%></a>
+                    <a href="http://www.vimeo.com/"><%= image_tag "vimeo.png"%></a>
+              <div class="clear h20"></div>
+                    <h3 style = "color: white">Social</h3>
+              </div>	
+            </div>
+            <div class="box home_box1 color4 no_mr"><a href="#contact"><%= image_tag "contact_butt.png"%></a></div>
+               
+        </div> <!-- END of home -->
+        
+        
+        <div class="section section_with_padding" id="aboutus"> 
+            <h2>About Us</h2>
+            <p><em>ConDoctor is a school project brought to you by these awesome bitches!!!!!! </em></p>
+            <div class="half left">
+            	<div class="img_border img_fl">
+                    <%= image_tag "templatemo_image_01-pat.jpg"%>
+                </div>
+                <p><strong>Jon Patrick Lim</strong></p>
+                <p>A consistent academic scholar from the University of the Philippines.</p>
+                <cite>handsome<a href = "http://www.facebook.com/pumpme2010"><span><em>- patthegreat.com </em></span></a></cite>
+			</div>
+            <div class="half right">
+                <div class="img_border img_fl">
+                	<%= image_tag "templatemo_image_01-mharkie.jpg"%>
+                </div>
+                <p><strong>Mharkie Cabanlit</strong></p>
+                <p>A very pretty and muscular undergraduate student major in Computer Science.</p>
+                <cite>single :)<a href = "http://www.facebook.com/MharkieCabanlit"><span><em>- vaginaldoubt.com </em></span></a></cite>
+			</div>
+            <div class="clear h40"></div>
+            <div class="half left">
+            	<div class="img_border img_fl">
+                	<%= image_tag "templatemo_image_01-jao.jpg"%>
+                </div>
+                <p><strong>Jao Hallen Banados</strong></p>
+                <p>One of the most sought after graphic Designer. Double major in Computer Science and Fine Arts.</p>
+                <cite>bj<a href = "https://www.facebook.com/jaohallen"><span><em>- lakersfangirls.com </em></span></a></cite>
+			</div>
+            <div class="half right">
+                <div class="img_border img_fl">
+                	<%= image_tag "templatemo_image_01-merida.jpg"%>
+                </div>
+                <p><strong>Princess Mérida</strong>
+                <p>    Best programmer ever with curly hair and fetish for bears.</p>
+                <cite>bungi<a href = "http://wwww.brave.com"><span><em>- brave.com </em></span></a></cite>
+			</div>
+                    
+            <a href="#home" class="slider_nav_btn home_btn">home</a> 
+            <a href="#home" class="slider_nav_btn previous_btn">Previous</a>
+            <a href="#contact" class="slider_nav_btn next_btn">Next</a> 
+        </div> 
+
+        <div class="section section_with_padding" id="contact"> 
+            <h2>Contact</h2> 
+            <div class="half left">
+                <h4>Questions? Suggestions? Recommendations?</h4>
+                <p>Feel free to give us your feedback about our site. </p>
+                <div id="contact_form">
+                    <form method="post" name="contact" action="send_mail.php">
+                        <div class="left">
+                            <label for="author">Name:</label> <input name="author" type="text" class="input_field_long" id="author" maxlength="40" />
+                                              
+                            <label for="email">Email:</label> <input name="email" type="text" class="input_field_long" id="email" maxlength="40" />
+                        
+                        
+                            <label for="text">Message:</label> <textarea id="text" name="text" rows="0" cols="0"></textarea> <p>
+                            <input type="submit" class="submit_btn float_l" name="submit" id="submit" value="Send" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="half right">
+                <h4>Mailing Address</h4>
+                485-B-I Sitio Tangkongan <br />
+                Aznar Road, Sambag I<br />
+                Cebu City, Philippines<br />
+          		<strong>Email: info@condoctor.com</strong><br />
+                
+                <div class="clear h20"></div>
+                <div class="img_nom img_border"><span></span>
+                
+                <iframe width="320" height="240" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=University+of+the+Philippines+Visayas+-+Cebu+College,+Cebu+City,+Philippines&amp;aq=0&amp;oq=university+o&amp;sll=10.303672,123.898771&amp;sspn=0.003066,0.005284&amp;ie=UTF8&amp;hq=University+of+the+Philippines+Visayas+-+Cebu+College,+Cebu+City,+Philippines&amp;ll=10.322219,123.897979&amp;spn=0.012265,0.021136&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=15667761557274892201&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=University+of+the+Philippines+Visayas+-+Cebu+College,+Cebu+City,+Philippines&amp;aq=0&amp;oq=university+o&amp;sll=10.303672,123.898771&amp;sspn=0.003066,0.005284&amp;ie=UTF8&amp;hq=University+of+the+Philippines+Visayas+-+Cebu+College,+Cebu+City,+Philippines&amp;ll=10.322219,123.897979&amp;spn=0.012265,0.021136&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=15667761557274892201" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                </div>
+			<a href="#home" class="slider_nav_btn home_btn">home</a> 
+            <a href="#aboutus" class="slider_nav_btn previous_btn">Previous</a>
+            
+
+        </div> 
+
+
+        
+    </div> 
+
+
+        
+</div>
+
+</div>
+<!--<marquee behavior="scroll" direction="right"><%#= image_tag "dog.gif"%></marquee>-->
+

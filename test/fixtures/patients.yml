@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  bloodtype: MyString
+  allergies: MyString
+  surgeries: MyString
+  med_conditions: MyString
+  injuries: MyString
+  reg_med: MyString
+  others: MyString
+
+two:
+  user_id: 1
+  bloodtype: MyString
+  allergies: MyString
+  surgeries: MyString
+  med_conditions: MyString
+  injuries: MyString
+  reg_med: MyString
+  others: MyString

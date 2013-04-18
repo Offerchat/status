@@ -1,4 +1,4 @@
-OJT Project
+Condoctor
 ======
 
-Offerchat Status Monitoring \m/
+Banados, Cabanlit, Lim \m/

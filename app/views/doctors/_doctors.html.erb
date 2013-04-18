@@ -1,0 +1,19 @@
+<table>  
+  <tr> 
+    <th></th> 
+    <th width=200 style=" border-radius:6px; font-size:17px; background-color:#FF4D4D">Name</th>  
+    <th width=200 style=" border-radius:6px; font-size:17px; background-color:#FF4D4D">Email</th>
+    <th width=200 style=" border-radius:6px; font-size:17px; background-color:#FF4D4D">Contact Number</th>  
+    <th width=200 style=" border-radius:6px; font-size:17px; background-color:#FF4D4D">Specialization</th>  
+  </tr>  
+  <% @doctors.each do |doctor| %>
+    <tr height = 50>  
+      <td style ="background-color: #FF8080; font-size:14px; padding: 8px"><%= image_tag(doctor.user.image) %></td>  
+      <td style ="background-color: #FF8080; font-size:14px; padding: 8px"><%= doctor.user.name %></td>  
+      <td style ="background-color: #FF8080; font-size:14px; padding: 8px"><%= doctor.user.email %></td>
+      <td style ="background-color: #FF8080; font-size:14px; padding: 8px"><%= doctor.user.contact_number %></td>  
+      <td style ="background-color: #FF8080; font-size:14px; padding: 8px"><%= doctor.specialization %></td> 
+      <td><%= link_to image_tag("navigation/nav_viewsched.png"), doctors_schedule_path(:id => doctor.id) %></td>
+    </tr>  
+  <% end %>  
+</table>

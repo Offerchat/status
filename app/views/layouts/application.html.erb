@@ -1,45 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Offerchat Status</title>
 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ConDoctor</title>
+<%= favicon_link_tag 'favicon.ico' %>
+<meta name="keywords" content="consult, doctor, cmsc 126, web engineering, consulatation" />
+<meta name="description" content="ConDoctor is a free website." />
+    
+    <%= stylesheet_link_tag "templatemo_style" %>
+    <%= stylesheet_link_tag "profile_style", :media=>"screen" %>
 
+    <%= javascript_include_tag "init" %>
+    <%= javascript_include_tag "jquery.min" %>
+    <%= javascript_include_tag "jquery.scrollTo-min" %>
+    <%= javascript_include_tag "jquery.localscroll-min" %>
+    
+    <%= stylesheet_link_tag "slimbox2", :media=>"screen" %>
+    <%= javascript_include_tag "slimbox2" %>
+    <%= javascript_include_tag "swap" %>
+    <%= javascript_include_tag "facebook" %>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" %>
+    <%= javascript_include_tag "http://code.jquery.com/jquery-1.9.1.js" %>
+    <%= javascript_include_tag "http://code.jquery.com/ui/1.10.1/jquery-ui.js" %>
+    <%= stylesheet_link_tag "/resources/demos/style.css" %>
 
-  <%= favicon_link_tag %>
+    <%= javascript_include_tag "https://raw.github.com/rails/jquery-ujs/master/src/rails.js" %>
 
-</head>
+    <script>
+      $(function() {
+            /*$("#doctors th a").live("click", function() {
+              $.getScript(this.href);
+              return false;
+            });*/
+            $("#doctors_search input").keyup(function() {
+              $.get($("#doctors_search").attr("action"), $("#doctors_search").serialize(), null,"script");
+              return false;
+            });
+            $("#doctors_searchDoctor input").keyup(function() {
+              $.get($("#doctors_searchDoctor").attr("action"), $("#doctors_searchDoctor").serialize(), null,"script");
+              return false;
+            });
+            $("#doctors_searchClinic input").keyup(function() {
+              $.get($("#doctors_searchClinic").attr("action"), $("#doctors_searchClinic").serialize(), null,"script");
+              return false;
+            });
+      });
+    </script>
+</head> 
 <body>
 
-
-<div class='midlogo'>
-<center>
-<%= link_to image_tag("logo.png"), 'https://www.offerchat.com/' %>
-</center>
-</div>
-
 <%= yield %>
-
-
-<footer>
-
-<div class='container'>
-	<div class='grid-12'>
-		<span class='fright'>
-			Copyright &copy;
-			<%= link_to "Offerchat Inc.", 'https://www.offerchat.com/' %>
-			All Rights Reserved.
-		</span>
-
-		<%= image_tag("footer-logo.png", :width => '150') %>
-		
-	</div>
+<br><br><br>
+<div id="templatemo_footer">
+    <center>Copyright © 2069 <a href="#">Cockadoodledoo</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Awesome Open Source People and of Course US</a></center>
 </div>
-
-</footer>
-
 </body>
+
 </html>

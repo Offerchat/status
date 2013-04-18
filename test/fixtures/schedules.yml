@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  doctor_id: 1
+  day: MyString
+  clinic_name: MyString
+  address: MyString
+  contact_num: MyString
+  max_slots: 1
+
+two:
+  doctor_id: 1
+  day: MyString
+  clinic_name: MyString
+  address: MyString
+  contact_num: MyString
+  max_slots: 1

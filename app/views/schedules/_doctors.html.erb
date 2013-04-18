@@ -1,0 +1,24 @@
+<table>  
+  <tr> 
+    <th></th> 
+    <th width=200 style=" border-radius:6px; font-size:17px; background-color: #FF4D4D">Name</th>  
+    <th style=" border-radius:6px; font-size:17px; background-color: #FF4D4D">Email</th>
+    <th width=200 style=" border-radius:6px; font-size:17px; background-color: #FF4D4D">Clinic Name</th>
+    <th style=" border-radius:6px; font-size:17px; background-color: #FF4D4D">Address</th>
+    <th style=" border-radius:6px; font-size:17px; background-color: #FF4D4D">Contact Number</th>  
+    <th style=" border-radius:6px; font-size:17px; background-color: #FF4D4D">Specialization</th>  
+    <th width=200></th> 
+  </tr>  
+  <% @skeds.each do |sked| %>
+    <tr height = 50>  
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= image_tag(sked.doctor.user.image) %></td>  
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= sked.doctor.user.name %></td>  
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= sked.doctor.user.email %></td>
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= sked.clinic_name %></td>
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= sked.address %></td>
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= sked.contact_num %></td>  
+      <td style ="background-color:#FF8080; font-size:14px; padding: 8px"><%= sked.doctor.specialization %></td> 
+      <td><%= link_to image_tag("navigation/nav_viewsched.png"), doctors_schedule_path(:id => sked.doctor.id, :c_name => sked.clinic_name)%></td>
+    </tr>  
+  <% end %>  
+</table>

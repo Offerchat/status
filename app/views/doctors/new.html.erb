@@ -1,0 +1,39 @@
+<%= render 'pages/navbar' %>
+
+<div id="templatemo_main" style ="width:900px">
+    <br><br><br><br><br>
+    <div id="content" >
+    <div class="section section_with_padding" id="index">
+    	<h2>Doctor Sign up</h2>  
+        <div class="half right">
+            <div id="contact_form" style ="padding-left:60px">
+            <h4>Please fill up the boxes below.</h4>
+                <%= simple_form_for @doctor do |f| %>
+                <%= f.input :ed_attainment,:placeholder => 'Enter educational attainment...',input_html: {class: 'input_field_short'}, :label =>"Educational Attainment" %>
+                <%= f.input :specialization,:placeholder => 'Enter specialization...',input_html: {class: 'input_field_short'} %>
+                <%= f.input :office_address,:placeholder => 'Enter address...',input_html: {class: 'input_field_short'} %>
+                <%= f.input :office_contact,:placeholder => 'Ex: 2731890',input_html: {class: 'input_field_short'} %>
+                <%= f.input :user_id,:as => :hidden,:input_html => {:value => current_user[:id]} %>
+                <%= f.submit "Save",:class => "submit_btn"%>
+            </div>
+        </div>
+
+          <div class="half left">
+            <br>
+            <br>
+            <div id="home_gallery" class="box no_mr">
+                 <a href="http://collider.com/wp-content/uploads/the-twilight-saga-breaking-dawn-part-2-carlisle.jpg" rel="lightbox[gallery]" title="Happy Doctors that lightens up your day." ><%= image_tag "doc1.jpg"%> </a>
+                        <a href="http://www.commentsyard.com/cy/01/6474/Mixed%20Flowers%20and%20a%20Bear.jpg" rel="lightbox[gallery]" title="Flowers for you."><%= image_tag "flower.jpg", :size => "152x152"%></a>
+                        <a href="http://www.naturalnews.com/Quotes/Quote-Best-Doctors.jpg" rel="lightbox[gallery]" class="no_mr" title="We also have shirtless doctors."><%= image_tag "hot.jpg"%></a>
+                        
+                        <a href="http://media.tumblr.com/e653a12737acdba489200d713aca50c9/tumblr_inline_mgt5m5OOvs1re0jxj.gif" rel="lightbox[gallery]" title="ConDoctor is for free." ><%= image_tag "butt_free.jpg"%> </a>
+                        <a href="http://media.tumblr.com/25fde42515480a9e5129ac06c8e1a92c/tumblr_inline_mgsco6jvqq1r6h22v.gif" rel="lightbox[gallery]" title="Free of any ads, may it be sensual or annoying or hornifying." ><%= image_tag "butt_noads.jpg"%></a>
+                        <a href="http://25.media.tumblr.com/9aaf83e8af80d69b722ab25f57cd2230/tumblr_mgu6fcD7hM1s294e4o1_500.gif" rel="lightbox[gallery]" class="no_mr" title = "No spam just ham."><%= image_tag "butt_spam.jpg"%></a>
+                
+        
+            </div>
+            
+        </div>
+        <% end %>
+    </div>         
+</div> 

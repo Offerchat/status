@@ -1,0 +1,47 @@
+<%= render 'doctors/navbar' %>
+<div class = "content"> 
+  <div id="box-container-profile">
+    <div style = "height:100px"></div>
+    <center>
+
+    <% flash.each do |key,value| %>
+        <div align="center" class="flash3"><%= value %></div>
+    <% end %><br>
+
+    <% @schedule.each do |s| %>  
+      <h2><%= s.clinic_name %></h2>
+      <h8>(<%= s.start_time.strftime("%I:%M%p")%> - <%= s.end_time.strftime("%I:%M%p")%>)</h8>
+     
+      <center>
+        <%
+          reserva = Reservation.where(:schedule_id => s.id, :reserved_date => @today, :restype => "not served")
+        %>
+      <% if reserva.blank? %>
+         <br><br>
+         <div align="center" class="flash3">No patients scheduled for today.</div>
+      <% else %>
+      <br>
+      <%= link_to image_tag("entertainmo.png",:size => "165x35"), doctors_serve_path(:schedule_id => s.id) %>
+      <table  style = "margin-top:5px;">
+        <tr>
+          <th></th> 
+          <th width=200 style=" border-radius:6px; font-size:17px; background-color:#3399FF">Name</th>  
+          <th width=200 style=" border-radius:6px; font-size:17px; background-color:#3399FF">Email</th>
+          <th width=200 style=" border-radius:6px; font-size:17px; background-color:#3399FF">Contact Number</th>  
+        </tr>  
+
+       
+
+        <% reserva.each do |reservation| %>
+          <tr height = 50>  
+            <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= image_tag (reservation.user.image) %></td>  
+            <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= reservation.user.name %></td>  
+            <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= reservation.user.email %></td>
+            <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= reservation.user.contact_number %></td> 
+          </tr>  
+        <% end %>  
+      </table>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  ed_attainment: MyString
+  specialization: MyString
+  office_address: MyString
+  office_contact: MyString
+
+two:
+  user_id: 1
+  ed_attainment: MyString
+  specialization: MyString
+  office_address: MyString
+  office_contact: MyString

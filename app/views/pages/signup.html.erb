@@ -1,0 +1,24 @@
+<%= render 'pages/navbar' %>
+
+<div id="templatemo_main" > 
+<br><br><br><br><br>  
+    <div id="content"> 
+		<div class="section section_with_padding" >
+        	<div class="clear h40"></div>
+        	<center><h3> What would type of user would you want to signup for? </h3></center>
+        	<div class="clear h40"></div>
+            
+			<div class ="half right" style = "width:300px;height:500px">
+				<center><h4>Choose me if you are a doctor that would want to save lives!</h4></center>
+           	 	<div class="box home_box1 color1"><%= link_to image_tag("big_doc.jpg"),edit_user_path(@user,:usertype => "doctor") %></div>
+        	</div>
+        	<div class ="half left" style = "width:300px;height:500px">
+        		<center><h4>Choose me if you would like to schedule a checkup!</h4></center>
+            	<div class="box home_box1 color2"><%= link_to image_tag("big_use.jpg"),edit_user_path(@user,:usertype => "patient") %></div>
+                    
+            </div>
+            
+        </div> <!-- END of home -->
+        
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<%= render 'doctors/navbar' %>
+<div class = "content"> 
+  <div id="box-container-profile">
+    <div style = "height:100px"></div>
+    <center>
+    <h4>Patients Scheduled for <%= @date.strftime("%B %d 20%y") %></h4>
+    <% if @reservations.blank? %>
+      <div align="center" class="flash3">No patients</div>
+    <% else %>
+    <table style = "margin-top:5px;">
+      <tr>
+        <th></th> 
+        <th width=200 style=" border-radius:6px; font-size:17px; background-color:#3399FF">Name</th>  
+        <th width=200 style=" border-radius:6px; font-size:17px; background-color:#3399FF">Email</th>
+        <th width=200 style=" border-radius:6px; font-size:17px; background-color:#3399FF">Contact Number</th>  
+      </tr>  
+      <% @reservations.each do |reservation| %>
+        <tr height = 50>  
+          <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= image_tag (reservation.user.image) %></td>  
+          <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= reservation.user.name %></td>  
+          <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= reservation.user.email %></td>
+          <td style ="background-color:lightblue; font-size:14px; padding: 8px"><%= reservation.user.contact_number %></td> 
+        </tr>  
+      <% end %>  
+    </table>
+    <% end %>
+  </div>
+</div>

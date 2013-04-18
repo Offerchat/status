@@ -1,4 +1,4 @@
-Ojtproject::Application.configure do
+Condoctor::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -34,4 +34,9 @@ Ojtproject::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ENV['FACEBOOK_APP_ID'] = "497215750314047"; #localhost
+  ENV['FACEBOOK_SECRET'] = "a0d46b695ce7cc585551875252f7be47"; #localhost
+  #ENV['FACEBOOK_APP_ID'] = "507484142622827"; #app
+  #ENV['FACEBOOK_SECRET'] = "ef76c9bd938d815b7c238b255a4b1035"; #app
 end
