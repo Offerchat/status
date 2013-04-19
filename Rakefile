@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Condoctor::Application.load_tasks
+Ojtproject::Application.load_tasks

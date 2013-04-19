@@ -1,0 +1,192 @@
+/* line 1, ../../app/assets/stylesheets/loader.css.sass */
+#floatingCirclesG {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(0.6);
+}
+
+/* line 12, ../../app/assets/stylesheets/loader.css.sass */
+.f_circleG {
+  position: absolute;
+  background-color: #525252;
+  height: 5px;
+  width: 5px;
+  -moz-border-radius: 3px;
+  -moz-animation-name: f_fadeG;
+  -moz-animation-duration: 0.72s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: linear;
+  -webkit-border-radius: 3px;
+  -webkit-animation-name: f_fadeG;
+  -webkit-animation-duration: 0.72s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: linear;
+  -ms-border-radius: 3px;
+  -ms-animation-name: f_fadeG;
+  -ms-animation-duration: 0.72s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-direction: linear;
+  -o-border-radius: 3px;
+  -o-animation-name: f_fadeG;
+  -o-animation-duration: 0.72s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-direction: linear;
+  border-radius: 3px;
+  animation-name: f_fadeG;
+  animation-duration: 0.72s;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+}
+
+/* line 44, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_01 {
+  left: 0;
+  top: 12px;
+  -moz-animation-delay: 0.27s;
+  -webkit-animation-delay: 0.27s;
+  -ms-animation-delay: 0.27s;
+  -o-animation-delay: 0.27s;
+  animation-delay: 0.27s;
+}
+
+/* line 54, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_02 {
+  left: 4px;
+  top: 4px;
+  -moz-animation-delay: 0.36s;
+  -webkit-animation-delay: 0.36s;
+  -ms-animation-delay: 0.36s;
+  -o-animation-delay: 0.36s;
+  animation-delay: 0.36s;
+}
+
+/* line 64, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_03 {
+  left: 12px;
+  top: 0;
+  -moz-animation-delay: 0.45s;
+  -webkit-animation-delay: 0.45s;
+  -ms-animation-delay: 0.45s;
+  -o-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
+
+/* line 74, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_04 {
+  right: 4px;
+  top: 4px;
+  -moz-animation-delay: 0.54s;
+  -webkit-animation-delay: 0.54s;
+  -ms-animation-delay: 0.54s;
+  -o-animation-delay: 0.54s;
+  animation-delay: 0.54s;
+}
+
+/* line 84, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_05 {
+  right: 0;
+  top: 12px;
+  -moz-animation-delay: 0.63s;
+  -webkit-animation-delay: 0.63s;
+  -ms-animation-delay: 0.63s;
+  -o-animation-delay: 0.63s;
+  animation-delay: 0.63s;
+}
+
+/* line 94, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_06 {
+  right: 4px;
+  bottom: 4px;
+  -moz-animation-delay: 0.72s;
+  -webkit-animation-delay: 0.72s;
+  -ms-animation-delay: 0.72s;
+  -o-animation-delay: 0.72s;
+  animation-delay: 0.72s;
+}
+
+/* line 104, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_07 {
+  left: 12px;
+  bottom: 0;
+  -moz-animation-delay: 0.81s;
+  -webkit-animation-delay: 0.81s;
+  -ms-animation-delay: 0.81s;
+  -o-animation-delay: 0.81s;
+  animation-delay: 0.81s;
+}
+
+/* line 114, ../../app/assets/stylesheets/loader.css.sass */
+#frotateG_08 {
+  left: 4px;
+  bottom: 4px;
+  -moz-animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+  -ms-animation-delay: 0.9s;
+  -o-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+@-moz-keyframes f_fadeG {
+  /* line 125, ../../app/assets/stylesheets/loader.css.sass */
+  0% {
+    background-color: white;
+  }
+
+  /* line 127, ../../app/assets/stylesheets/loader.css.sass */
+  100% {
+    background-color: #525252;
+  }
+}
+
+@-webkit-keyframes f_fadeG {
+  /* line 131, ../../app/assets/stylesheets/loader.css.sass */
+  0% {
+    background-color: white;
+  }
+
+  /* line 133, ../../app/assets/stylesheets/loader.css.sass */
+  100% {
+    background-color: #525252;
+  }
+}
+
+@-ms-keyframes f_fadeG {
+  /* line 137, ../../app/assets/stylesheets/loader.css.sass */
+  0% {
+    background-color: white;
+  }
+
+  /* line 139, ../../app/assets/stylesheets/loader.css.sass */
+  100% {
+    background-color: #525252;
+  }
+}
+
+@-o-keyframes f_fadeG {
+  /* line 143, ../../app/assets/stylesheets/loader.css.sass */
+  0% {
+    background-color: white;
+  }
+
+  /* line 145, ../../app/assets/stylesheets/loader.css.sass */
+  100% {
+    background-color: #525252;
+  }
+}
+
+@keyframes f_fadeG {
+  /* line 149, ../../app/assets/stylesheets/loader.css.sass */
+  0% {
+    background-color: white;
+  }
+
+  /* line 151, ../../app/assets/stylesheets/loader.css.sass */
+  100% {
+    background-color: #525252;
+  }
+}

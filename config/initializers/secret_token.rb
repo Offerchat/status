@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Condoctor::Application.config.secret_token = 'ba0bfdcf755afcf529ea4bcf155283a6b93d13808c5472d650757b2c9c5e7204a9fbeca48d32624d038f83a44ddf63a3a6872e9424847fc31084952d5d807078'
+Ojtproject::Application.config.secret_token = '44e1ed237cca4227eb02a398c5d2461f5e76425a07ad5700007cfd9beaa0f6a31d7f55d4ee7850b6c4a7147aa7a7696fbffd10c4200ec9158501ecc1ff899fc1'

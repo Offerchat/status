@@ -1,40 +1,6 @@
-Condoctor::Application.routes.draw do
-  ActiveAdmin.routes(self)
+Ojtproject::Application.routes.draw do
+  get "status/index"
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
-
-  get "pages/signup"
-  get "pages/profile"
-
-  get "users/editUser"
-
-  get "doctors/profile"
-  get "doctors/serve"
-  get "doctors/viewprofile"
-  get "doctors/selectSearch"
-  get "doctors/search"
-  get "doctors/searchDoctor"
-  get "doctors/searchClinic"
-  get "doctors/schedule"
-  
-  get "reservations/view"
-  get "reservations/entertain"
-  get "notifications/remove"
-
-  get "schedules/remove"
-  get "schedules/view"
-
-  resources :pages
-  resources :users
-  resources :doctors
-  resources :reservations
-  resources :notifications
-  resources :schedules
-  root :to => 'pages#index' 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -84,7 +50,8 @@ Condoctor::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'status#index'
+  resources :status, path: ''
 
   # See how all your routes lay out with "rake routes"
 

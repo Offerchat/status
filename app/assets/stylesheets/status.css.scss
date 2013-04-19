@@ -1,0 +1,26 @@
+// Place all the styles related to the status controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.withborder {
+	border:1px solid black;
+}
+
+.websites {
+	height: 300px;	
+}
+
+.blogs {
+	height: 300px;
+	width: 600px;
+	margin-top: 20px;	
+}
+
+.website {
+	margin:40px;
+	padding: 50px;
+	width: 150px;
+	height: 120px;
+	display: inline-block;
+}
+

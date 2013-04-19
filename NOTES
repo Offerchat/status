@@ -1,7 +1,0 @@
-has_many :clients, :dependent => :destroy
-
-class Doctor <
-	has_many :patients, :dependent => :destroy, :uniq => true
-
-rails g migration AddTypeToUser type:string
-rails g migration DeleteSexFromUser
