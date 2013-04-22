@@ -14,18 +14,26 @@
 				<div class="grid-6">
 					<div class="statusbox"> 
 						<center>
-							<%= image_tag("website_live.png") %>
-							<h2><small><strong>Website</strong></small></h2>
-							<i class="ico-live"></i>
+							<% if @site %>
+								<%= image_tag("website_live.png") %>
+					          	<h2><small><strong>Site <br> ALIVE AND KICKIN!</strong></small></h2> 
+					        <% else    %>
+					          	<%= image_tag("website_live.png") %>
+					          	<h2><small><strong>Site <br> DEAD. Status - <%= @x %></strong></small></h2>
+					        <%  end   %>	
 						</center>
 					</div>
 				</div>
 				<div class="grid-6">
 					<div class="statusbox">
 						<center>
-							<%= image_tag("server.png") %>
-							<h2><small><strong>Chat Server</strong></small></h2>
-							<i class="ico-live"></i>
+							<% if @server %>
+								<%= image_tag("website_live.png") %>
+					          	<h2><small><strong>Chat Server <br> ALIVE AND KICKIN!</strong></small></h2> 
+					        <% else    %>
+					          	<%= image_tag("website_live.png") %>
+					          	<h2><small><strong>Chat Server <br> DEAD. Status - <%= @y %></strong></small></h2>
+					        <%  end   %>
 						</center>
 					</div>
 				</div>
@@ -34,7 +42,7 @@
 		</div>
 		<div class="container">
 			<div class="grid-8">
-				<% @feeds.each do |feed| %>
+				<% @feeds.take(5).each do |feed| %>
 					<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
 						<div class="box">
 							<div class="clear"></div>
