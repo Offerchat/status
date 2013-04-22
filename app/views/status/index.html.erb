@@ -1,8 +1,20 @@
 <h1 style= "font-size:40px">STATUS</h1>
 
 	<div class = "withborder websites">
-		<div class ="withborder website"></div>
-		<div class ="withborder website"></div>
+		<div class ="withborder website">
+			<% if @site %>
+				SITE IS ALIVE AND KICKIN!
+			<% else		%>
+				DEAD-- STATUS: <%= @x %>
+			<%  end 	%>
+		</div>
+		<div class ="withborder website">
+			<% if @server %>
+				SERVER IS ALIVE AND KICKIN!
+			<% else		%>
+				DEAD-- STATUS: <%= @y %>
+			<%  end 	%>
+		</div>
 	</div>
 
 <div id="content">
