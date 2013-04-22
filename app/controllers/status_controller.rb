@@ -2,7 +2,7 @@ require 'net/http'
 
 class StatusController < ApplicationController
   def index
-  	#@update = FeedEntry.update_from_feed("http://blog.offerchat.com/feed")
+  	@update = FeedEntry.update_from_feed("http://blog.offerchat.com/feed")
   	@feeds = FeedEntry.all
 
   	@x = pingSite
