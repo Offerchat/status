@@ -1,6 +1,3 @@
-<div class='container'>
-<div class='block clearfix'>
-<div class='grid-12 t-center'>
 <h1 style= "font-size:40px">STATUS</h1>
 
 	<div class = "withborder websites">
@@ -8,10 +5,30 @@
 		<div class ="withborder website"></div>
 	</div>
 
-	<div class = "withborder websites">
-		<div></div>
+<div id="content">
+<div class="post-wrap">
+	<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
+	<div class="box">
+		<div class="clear"></div>
+	<% @feeds.each do |feed| %>
+		<div class="frame">
+			<div class="title-wrap">
+				<h2 class="entry-title"><%= link_to feed.name, feed.guid %></h2>
+				
+				<div class="title-meta">
+					<span><%= feed.author %></span> 
+					<span><%= link_to feed.published_at.strftime("%B %-d, %Y"), feed.url %></span> 
+					<span><%= link_to "View Comments",feed.url+"/#disqus_thread" %></span>
+				</div>
+			</div>
+			
+			<div class="post-content">
+				<p><%= feed.summary %></p>
+					<span><%= link_to "Read More >>",feed.url %></span>
+			</div>
+		</div>
 	</div>
-
-</div>
-</div>
-</div>
+ 	<% end 					%>
+ 	</div>
+ </div>
+ </div>
