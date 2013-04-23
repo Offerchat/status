@@ -1,5 +1,5 @@
 require 'net/http'
-require "uri"
+require 'uri'
 
 class StatusController < ApplicationController
   def index
