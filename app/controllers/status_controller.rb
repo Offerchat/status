@@ -27,6 +27,8 @@ class StatusController < ApplicationController
 	    return "0"
 	rescue Errno::ETIMEDOUT
 	    return "0"
+	rescue SocketError
+	    return "0"
 	end  
   end
 
@@ -38,6 +40,8 @@ class StatusController < ApplicationController
 	  rescue Errno::ECONNREFUSED
 	    return "0"
 	  rescue Timeout::Error
+	    return "0"
+	  rescue SocketError
 	    return "0"
 	  end
   end
