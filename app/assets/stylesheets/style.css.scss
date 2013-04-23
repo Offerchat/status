@@ -428,7 +428,12 @@ border:none;
 /*Status*/
 .lgreybox{background: #F0F0F0 ; padding: 10px; margin-bottom: 20px;  font-family:'Open Sans','Helvetica Neue',Arial sans-serif;min-height:480px; border: 1px solid #E0E0E0;}
 .twitter-text{border-bottom: 1px solid #e0e0e0;}
-.quote-right{float:right;padding-left: 200px; top:-20px;} 
+.quote-right{float:right;margin-left:200px; top:-50px;} 
+.statusbox .ico-web{position:absolute; left:288px; float:right;}
+.statusbox {position:relative;}
+
+.statusbox .ico-serve{position:absolute; left:288px; float:right;}
+
 
 
 .notify-box{background: #1a5ea5; padding:9px; }
