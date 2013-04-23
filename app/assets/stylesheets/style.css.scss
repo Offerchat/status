@@ -376,7 +376,7 @@ box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);}
 .post:last-child{border: none;}
 .tweet-box img{float: left; padding-right: 10px;}
 .tweet-box p.tweet{float:right;width:200px;position:relative;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
-.tweet-box p.tweets{float:right;width:212px;padding:10px;color:#8e8e8e;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px; position:relative;}
+.tweet-box q.tweets{float:right;width:212px;padding:10px;color:#8e8e8e;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px; position:relative;}
 .tweet-box p.tweet:after{content:"";position:absolute;border-style:solid;display:block;width:0;top:8px;left:-12px;bottom:auto;border-width:10px 15px 10px 0;border-color:transparent #fff}
 .tweet-box p.tweet span.tweet-time{font-size: 11px;text-align: right;display: block;font-style:italic;}
 .tweet-box{border-bottom: #f00; padding: 20px 0 0px 0; border-bottom: 1px solid #3AB7CB;}
@@ -428,7 +428,7 @@ border:none;
 /*Status*/
 .lgreybox{background: #F0F0F0 ; padding: 10px; margin-bottom: 20px;  font-family:'Open Sans','Helvetica Neue',Arial sans-serif;min-height:480px; border: 1px solid #E0E0E0;}
 .twitter-text{border-bottom: 1px solid #e0e0e0;}
-.quote-right{float:right; top:-20px;} 
+.quote-right{float:right; margin-left: 20px;top:-20px;} 
 
 
 .notify-box{background: #1a5ea5; padding:9px; }
