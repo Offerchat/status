@@ -81,12 +81,14 @@
 					<div class="tweet-box clearfix">
 
 						<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
-						<p class="tweets">
-						<%= image_tag("quote-left.png", :size=>"11x15") %><%= tweet.summary %><%= image_tag("quote-right.png", :size=>"11x15") %></p>
+						<p class="tweet"><%= tweet.summary %></p>
 						
 							
 					</div>
 					<% end %>
+					<div class = "clearfix">
+						<%= link_to "Join the Conversation", "http://twitter.com/mekingarcenal", :class =>"pull-right" %>
+					</div>
 				</div>
 			</div>	
 		</div>
