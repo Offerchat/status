@@ -77,15 +77,16 @@
 				</div>
 				<div class="greybox latest tweet">
 					<h2 class="twitter-text"> twitter </h2>
-					<!-- insert loop here -->
+					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 					<div class="tweet-box clearfix">
 
 						<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
 						<p class="tweets"><%= image_tag("quote-left.png", :size=>"11x15") %>
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elitd dfafasdfasdf sasd fasd ffsdf fsdfa ssdd </p><%= image_tag("quote-right.png", :size=>"11x15", :class=>"quote-right") %>
+						<%= tweet.summary %> <%= image_tag("quote-right.png", :size=>"11x15", :class=>"quote-right") %>	</p>
+						
 							
 					</div>
-					<!-- end loop here -->
+					<% end %>
 				</div>
 			</div>	
 		</div>
