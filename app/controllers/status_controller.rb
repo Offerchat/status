@@ -1,48 +1,48 @@
 require 'net/http'
+require "uri"
 
 class StatusController < ApplicationController
   def index
-  	@update = FeedEntry.update_from_feed("http://blog.offerchat.com/feed")
-  	@feeds = FeedEntry.order("published_at DESC")
+  	feed = Feedzirra::Feed.fetch_and_parse("http://blog.offerchat.com/feed")
+  	@feeds = feed.entries.first(5)
 
-  	@x = pingSite
-	    if @x.to_i === 301
-	      @site = true
-	    end
+  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	@tweets = tweet.entries.first(5)
 
-    @y = pingServer
-	    if @y.to_i === 200
-	      @server = true
-	    end
+	#entry.summary.slice! "offerchat: "
+  	
+
+  	@site = pingSite
+	    
+    @server = pingServer
+	 
   end
 
   def pingSite
-    https = Net::HTTP.new('www.offerchat.com',80)
-    begin
-	    response = https.request_get('/')
-	    return response.code
-	rescue Errno::ECONNREFUSED
-	    return "0"
-	rescue Timeout::Error
-	    return "0"
-	rescue Errno::ETIMEDOUT
-	    return "0"
-	rescue SocketError
-	    return "0"
-	end  
+    uri = URI.parse("https://offerchat.com/")
+	http = Net::HTTP.new(uri.host, uri.port)
+	http.use_ssl = true
+	http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+	request = Net::HTTP::Get.new(uri.request_uri)
+
+	response = http.request(request)  
+
+	if response.code.to_i === 200
+		return true
+	end
   end
 
   def pingServer
-    https = Net::HTTP.new('realtime.offerchat.com',9090)
-	  begin
-	    response = https.request_get('/')
-	    return response.code
-	  rescue Errno::ECONNREFUSED
-	    return "0"
-	  rescue Timeout::Error
-	    return "0"
-	  rescue SocketError
-	    return "0"
-	  end
+	uri = URI.parse("http://realtime.offerchat.com:9090/login.jsp")
+	http = Net::HTTP.new(uri.host, uri.port)
+
+	request = Net::HTTP::Get.new(uri.request_uri)
+
+	response = http.request(request)  
+
+	if response.code.to_i === 200
+		return true
+	end
   end
 end
