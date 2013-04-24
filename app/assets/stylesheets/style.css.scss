@@ -236,7 +236,7 @@ transition: all 0.2s ease-in-out;}
 .blockz.inner .section h3{ margin:20px 0;}
 .blockz .section .grid-3 h4{min-height: 50px;}
 .blockz .section p{margin: 0; color: #585858; font-size:14px; line-height: 1.8em;}
-.blockz.inner .section p{ color: #585858;  text-rendering: optimizelegibility;}
+.blockz.inner .section p{  text-rendering: optimizelegibility;}
 .blockz .section .grid-3 p{font-size:13px; line-height:1.6em; }
 .section.section-gray{margin-top: 50px; background: #f2f2f2; padding: 30px 0 40px 0; border-top: 1px solid #dedede;}
 .section.section-gray h3{color: #585858; font-size:17px; text-shadow: 0 1px 0 #fff;}
@@ -375,11 +375,11 @@ box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);}
 .post{border-bottom: 2px solid #ccc;}
 .post:last-child{border: none;}
 .tweet-box img{float: left; padding-right: 10px;}
-.tweet-box p.tweet{float:right;width:200px;position:relative;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
+.tweet-box p.tweet{margin-bottom: 20px;float:right;width:200px;position:relative;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
 .tweet-box p.tweets{float:right;width:212px;padding:10px;color:#8e8e8e;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px; position:relative;}
 .tweet-box p.tweet:after{content:"";position:absolute;border-style:solid;display:block;width:0;top:8px;left:-12px;bottom:auto;border-width:10px 15px 10px 0;border-color:transparent #fff}
 .tweet-box p.tweet span.tweet-time{font-size: 11px;text-align: right;display: block;font-style:italic;}
-.tweet-box{border-bottom: #f00; padding: 20px 0 0px 0; border-bottom: 1px solid #3AB7CB;}
+.tweet-box{ padding: 20px 0 0px 0; border-bottom: 1px solid #3AB7CB;}
 .pull-right{float: right;}
 
 /*FAQ*/
@@ -426,11 +426,14 @@ border:none;
 
 
 /*Status*/
-.lgreybox{background: #F0F0F0 ; padding: 10px; margin-bottom: 20px;  font-family:'Open Sans','Helvetica Neue',Arial sans-serif;min-height:480px; border: 1px solid #E0E0E0;}
+.lgreybox{background: #ebebeb ; padding: 10px; margin-bottom: 20px;  font-family:'Open Sans','Helvetica Neue',Arial sans-serif;min-height:480px; border: 1px solid #E0E0E0;}
 .twitter-text{border-bottom: 1px solid #e0e0e0;}
-.statusbox .ico-web{position:absolute; left:288px; float:right;}
+.statusbox .ico-live{position:absolute; left:288px; float:right; background: url('sprite.png') 0 0 ; width:82px; height:80px;}
+.statusbox .ico-down{position:absolute; left:288px; float:right; background: url('sprite.png') -90px 2px; width:82px; height:80px;}
 .statusbox {position:relative;}
-.statusbox .ico-serve{position:absolute; left:288px; float:right;}
+.imahe{border: 1px solid black;}
+
+
 
 
 

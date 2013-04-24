@@ -15,12 +15,12 @@
 					<div class="statusbox"> 
 						<center>
 							<% if @site %>
-								<div class="ico-web"><%= image_tag("sprite-live.png") %></div>
-								<%= image_tag("website_live.png") %>
+								<i class="ico-live"></i> 
+								<%= image_tag("website.png") %>
 					          	<h2><small><strong>Site <br> ALIVE AND KICKIN!</strong></small></h2> 
 					        <% else    %>
-					        	<div class="ico-web"><%= image_tag("sprite-down.png") %></div>
-					          	<%= image_tag("website_live.png") %>
+					        	<i class="ico-down"></i> 
+					          	<%= image_tag("website.png") %>
 					          	<h2><small><strong>Site <br> DEAD. </strong></small></h2>
 					        <%  end   %>	
 						</center>
@@ -30,12 +30,12 @@
 					<div class="statusbox">
 						<center>
 							<% if @server %>
-								<div class="ico-serve"><%= image_tag("sprite-live.png") %></div>
-								<%= image_tag("website_live.png") %>
+								<i class="ico-live"></i> 
+								<%= image_tag("server.png") %>
 					          	<h2><small><strong>Chat Server <br> ALIVE AND KICKIN!</strong></small></h2> 
 					        <% else    %>
-					        	<div class="ico-serve"><%= image_tag("sprite-down.png") %></div>
-					          	<%= image_tag("website_live.png") %>
+					        	<i class="ico-down"></i> 
+					            <%= image_tag("server.png") %>
 					          	<h2><small><strong>Chat Server <br> DEAD. </strong></small></h2>
 					        <%  end   %>
 						</center>
@@ -77,17 +77,20 @@
 			</div>
 			<div class="grid-4 omega clearfix">
 				<div class="media-buttons">
-					<p>media button, media button, media button, media button, media button, media button,</p>
+					<a class="mediaico-facebook" href="http://www.facebook.com/pages/Offerchat/233267793462955"></a>
+					<a class="mediaico-twitter" href="https://twitter.com/offerchat"></a>
 				</div>
 				<div class="greybox latest tweet">
 					<h2 class="twitter-text"> twitter </h2>
-					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
+				<!--	<%# @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%> -->
 						<div class="tweet-box clearfix">
+							<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
+							<p class="tweet"><%#= tweet.summary %></p>
 						</div>
-					<% end %>
-					<div class="clearfix">
-					<%= link_to "Join the conversation", "http://twitter.com/offerchat", :class=>"pull-right" %>
-				</div>
+					 <!--<%# end %> -->
+					<div class = "clearfix">
+						<%= link_to "Join the Conversation", "http://twitter.com/mekingarcenal", :class =>"pull-right" %>
+					</div>
 				</div>
 			</div>	
 		</div>
