@@ -13,7 +13,7 @@ class StatusController < ApplicationController
 
   	@site = pingSite
 	    
-    @server = false
+    @server = pingServer
 	 
   end
 
