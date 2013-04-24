@@ -21,7 +21,7 @@
 					        <% else    %>
 					        	<div class="ico-web"><%= image_tag("sprite-down.png") %></div>
 					          	<%= image_tag("website_live.png") %>
-					          	<h2><small><strong>Site <br> DEAD. </strong></small></h2>
+					          	<h2><small><strong>Site <br> DEAD </strong></small></h2>
 					        <%  end   %>	
 						</center>
 					</div>
@@ -36,7 +36,7 @@
 					        <% else    %>
 					        	<div class="ico-serve"><%= image_tag("sprite-down.png") %></div>
 					          	<%= image_tag("website_live.png") %>
-					          	<h2><small><strong>Chat Server <br> DEAD. </strong></small></h2>
+					          	<h2><small><strong>Chat Server <br> DEAD </strong></small></h2>
 					        <%  end   %>
 						</center>
 					</div>
@@ -65,7 +65,21 @@
 										<div class="bar-frame clearfix">
 											<div class="meta-info">
 												<div class="share">
-													<span class="bar-comment"><%= link_to "View Comments",entry.url+"/#disqus_thread" %></span>
+													<!-- google plus -->
+													<a class="share-google" href="https://plus.google.com/share?url=<%=entry.url%>" onclick="window.open('https://plus.google.com/share?url=<%=entry.url%>','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="mediaico-google"></i></a>
+
+													<!-- facebook -->
+													<a class="share-facebook" onclick="window.open('http://www.facebook.com/share.php?u=<%= entry.url %>','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://www.facebook.com/share.php?u=<%= entry.url %>" title="How NOT to Stress About Outsourcing Customer Service and Sit Back Like a Boss"  target="blank"><i class="mediaico-facebook"></i></a>
+
+													<!-- twitter -->
+													<a class="share-twitter" onclick="window.open('http://twitter.com/home?status=<%= entry.title %> - <%= entry.url %>','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://twitter.com/home?status=<%= entry.title %> - <%= entry.url %>" title="<%= entry.title %>" target="blank"><i class="mediaico-twitter"></i></a>
+
+													
+												</div>
+												<div class = "categories">
+													<span class="bar-comment">
+														<%= link_to "View Comments",entry.url+"/#disqus_thread" %>
+													</span>
 												</div>
 											</div>
 										</div>
@@ -76,11 +90,8 @@
 				<% end 					%>	
 			</div>
 			<div class="grid-4 omega clearfix">
-				<div class="media-buttons">
-					<p>media button, media button, media button, media button, media button, media button,</p>
-				</div>
 				<div class="greybox latest tweet">
-					<h2 class="twitter-text"> twitter </h2>
+					<h2 class="twitter-text"> Tweets </h2>
 					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 						<div class="tweet-box clearfix">
 
@@ -91,7 +102,7 @@
 						</div>
 					<% end %>
 					<div class = "clearfix">
-						<%= link_to "Join the Conversation", "http://twitter.com/mekingarcenal", :class =>"pull-right" %>
+						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
 					</div>
 				</div>
 			</div>	

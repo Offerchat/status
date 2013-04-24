@@ -1912,13 +1912,13 @@ img.alignright {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("images/sprite.png");
+  background-image: url("sprite.png");
   background-repeat: no-repeat;
 }
 
 .bar .share a:hover{background: transparent !important;}
 
-.mediaico-facebook{background-position:- 0; width: 59px; height: 20px;}
+.mediaico-facebook{background-position:0px 0; width: 59px; height: 20px;}
 .mediaico-facebook:hover{background-position:0 -22px; width: 59px; height: 20px;}
 .mediaico-facebook:active{background-position:0 -44px; width: 59px; height: 20px;}
 
