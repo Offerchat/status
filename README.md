@@ -3,4 +3,5 @@ OJT Project
  
 Offerchat Status Monitoring \m/
 
-http://offerchat-status.herokuapp.com
+http://status.offerchat.com
+http://limitless-falls-9186.herokuapp.com/
