@@ -7,10 +7,22 @@ gem 'rails', '3.2.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
   gem 'sqlite3'
 end
 group :production do
   gem 'pg'
+end
+
+group :development do
+  gem 'wdm', :platforms => [:mswin, :mingw], :require => false
+  gem 'win32console'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
 end
 
 # Gems used only for assets and not required
