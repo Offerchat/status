@@ -2,6 +2,16 @@ require 'spec_helper'
 
 describe StatusController, :type => :controller do
 
+  it "should return the correct status" do
+    response = @controller.send(:pingServer)
+    response.should be_true
+  end
+
+  it "should return the correct status" do
+    response = @controller.send(:pingSite)
+    response.should be_true
+  end
+
   describe "GET 'index'" do
     it "returns http success" do
       get :index
