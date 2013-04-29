@@ -10,12 +10,19 @@ class StatusController < ApplicationController
 
 
 
+
   	@site = pingSite
 	    
     @server = pingServer
 	 
   end
 
+  def view
+  	@post = Announcement.find(params[:id])
+
+  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	@tweets = tweet.entries.first(5)
+  end
 
 
   def pingSite
@@ -28,6 +35,7 @@ class StatusController < ApplicationController
 
 	begin
 		response = http.request(request)  
+
 	rescue Timeout::Error
 		return false
 	rescue Errno::ECONNREFUSED
@@ -48,10 +56,10 @@ class StatusController < ApplicationController
 	request = Net::HTTP::Get.new(uri.request_uri)
 
 	begin
-		response = http.request(request) 
-	rescue Timeout::Error 
-		return false
+		response = http.request(request)  
 	rescue Errno::ECONNREFUSED
+		return false
+	rescue Timeout::Error
 		return false
 	end
 

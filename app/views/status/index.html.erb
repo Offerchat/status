@@ -44,10 +44,11 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container" id="announcements">
 			<div class="grid-8">
 				<div>
-					<h1><b>Announcements!!</b></h1><br>
+
+					<h1>Announcements!</h1><br>
 				</div>
 				<% @posts.each do |entry| %>
 					<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
@@ -55,9 +56,10 @@
 							<div class="clear"></div>
 								<div class="frame">
 									<div class="title-wrap"> 
-										<h2 class="entry-title"><%= link_to entry.title, entry.title %></h2>
+										<h2 class="entry-title"><%= link_to entry.title, status_view_path(:id => entry.id) %></h2>
 										<div class="title-meta">
 											<span> by Administrator</span>
+											<span> on <%= entry.created_at.strftime("%B %d at %I:%M %p") %></span>
 										</div>
 									</div>	
 									<div class="post-content">	
@@ -68,11 +70,11 @@
 										<div class="bar-frame clearfix">
 											<div class="meta-info">
 												<div class="share">
-													<%= link_to "LINK",entry.title %>		
+													<%= link_to "LINK", status_view_path(:id => entry.id) %>		
 												</div>
 												<div class = "categories">
 													<span class="bar-comment">
-														<%= link_to "View Comments",entry.title+"/#disqus_thread" %>
+														<%= link_to "View Comments",status_view_path(:id => entry.id)+"#disqus_thread" %>
 													</span>
 												</div>
 											</div>
@@ -88,15 +90,18 @@
 				<div> 
 					<br><br><br><br>	
 				</div>
-				<div class="greybox latest tweet">
-					<h2 class="twitter-text"> Tweets </h2>
+				<div class="lgreybox latest tweet">
+					<h5 class="twitter-text">Latest Tweets </h5> 
 					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 
 						<div class="tweet-box clearfix">
 							<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
-							<p class="tweet"><%= tweet.summary %></p>
+							<p class="tweet">
+								sdlkfjlasdkf alksdfj asd lskdfj lskf  sd fdfjsldkf sdkjf slkfj ldskfj asldkfj asdl;fkj asdlfj asdf asl
+
+								<%= tweet.summary %></p>
 						</div>
-					<% end %>
+					<% end %> 
 					<div class = "clearfix">
 						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
 					</div>
