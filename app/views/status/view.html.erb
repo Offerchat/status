@@ -1,0 +1,70 @@
+<div class="container">
+<div class="block clearfix">
+<div class="grid-12 t-center">
+
+</div>
+</div>
+</div>
+<div class="blockz inner body-container">
+	<div class="section">
+		<div class="container">
+			<div class="grid-8">
+				<div>
+					<h4><%= link_to "Announcements", root_url+"#announcements" %>&nbsp;&nbsp;>>&nbsp;&nbsp;<%= link_to @post.title, status_view_path(:id => @post.id)%></h4>
+				</div>
+					<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
+						<div class="box">
+							<div class="clear"></div>
+								<div class="frame">
+									<div class="title-wrap"> 
+										<h2 class="entry-title"><%= @post.title%></h2>
+										<div class="title-meta">
+											<span> by Administrator</span>
+											<span> on <%= @post.created_at.strftime("%B %d at %I:%M %p") %></span>
+										</div>
+									</div>	
+									<div class="post-content">	
+										<p><%= @post.body %> </p>
+
+									</div>
+									<div class="bar">
+										
+									</div>
+								</div>
+						</div>
+					</div>
+				<div id="disqus_thread"></div>
+				    <script type="text/javascript">
+				        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+				        var disqus_shortname = 'offerchatstatus'; // required: replace example with your forum shortname
+
+				        /* * * DON'T EDIT BELOW THIS LINE * * */
+				        (function() {
+				            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+				            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+				        })();
+				    </script>
+				    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+				    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+				</div>
+			<div class="grid-4 omega clearfix">
+				<div class="greybox latest tweet">
+					<h2 class="twitter-text"> Tweets </h2>
+					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
+
+						<div class="tweet-box clearfix">
+							<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
+							<p class="tweet"><%= tweet.summary %></p>
+						</div>
+					<% end %> 
+					<div class = "clearfix">
+						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+
+

@@ -2,11 +2,11 @@ Ojtproject::Application.routes.draw do
 
   root :to => 'status#index'
 
+  get "status/view"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  get "status/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

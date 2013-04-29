@@ -4,4 +4,6 @@ ActiveAdmin.register Announcement do
 	    column "Announcement",:body
 	    default_actions
 	end
+
+	filter :title    
 end

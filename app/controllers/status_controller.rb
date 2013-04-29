@@ -5,8 +5,8 @@ class StatusController < ApplicationController
   def index
   	@posts = Announcement.all
 
-  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	#@tweets = tweet.entries.first(5)
+  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	@tweets = tweet.entries.first(5)
 
 	
 
@@ -14,6 +14,13 @@ class StatusController < ApplicationController
 	    
     @server = pingServer
 	 
+  end
+
+  def view
+  	@post = Announcement.find(params[:id])
+
+  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	@tweets = tweet.entries.first(2)
   end
 
   def pingSite
@@ -24,7 +31,13 @@ class StatusController < ApplicationController
 
 	request = Net::HTTP::Get.new(uri.request_uri)
 
-	response = http.request(request)  
+	begin
+		response = http.request(request)  
+	rescue Errno::ECONNREFUSED
+		return false
+	rescue Timeout::Error
+		return false
+	end
 
 	if response.code.to_i === 200
 		return true
@@ -39,7 +52,13 @@ class StatusController < ApplicationController
 
 	request = Net::HTTP::Get.new(uri.request_uri)
 
-	response = http.request(request)  
+	begin
+		response = http.request(request)  
+	rescue Errno::ECONNREFUSED
+		return false
+	rescue Timeout::Error
+		return false
+	end
 
 	if response.code.to_i === 200
 		return true
