@@ -7,7 +7,7 @@ class StatusController < ApplicationController
   	@feeds = feed.entries.first(2)
 
   	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	#@tweets = tweet.entries.first(5)
+  	@tweets = tweet.entries.first(5)
 
 	
 
@@ -16,6 +16,8 @@ class StatusController < ApplicationController
     @server = pingServer
 	 
   end
+
+
 
   def pingSite
     uri = URI.parse("https://offerchat.com/")
