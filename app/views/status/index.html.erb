@@ -8,7 +8,6 @@
 </div>
 <div class="blockz inner body-container">
 	<div class="section">
-
 		<div class="block clearfix">
 			<div class="container">
 				<div class="grid-6">
@@ -47,6 +46,9 @@
 		</div>
 		<div class="container">
 			<div class="grid-8">
+				<div>
+					<h1><b>Announcements!!</b></h1><br>
+				</div>
 				<% @posts.each do |entry| %>
 					<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
 						<div class="box">
@@ -78,19 +80,23 @@
 									</div>
 								</div>
 						</div>
-					</div>
+					</div>	
 				<% end 					%>	
+			
 			</div>
 			<div class="grid-4 omega clearfix">
+				<div> 
+					<br><br><br><br>	
+				</div>
 				<div class="greybox latest tweet">
 					<h2 class="twitter-text"> Tweets </h2>
-					<%# @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
+					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 
 						<div class="tweet-box clearfix">
 							<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
-							<p class="tweet"><%#= tweet.summary %></p>
+							<p class="tweet"><%= tweet.summary %></p>
 						</div>
-					<%# end %>
+					<% end %>
 					<div class = "clearfix">
 						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
 					</div>
