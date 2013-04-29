@@ -3,11 +3,10 @@ require 'uri'
 
 class StatusController < ApplicationController
   def index
-  	feed = Feedzirra::Feed.fetch_and_parse("http://blog.offerchat.com/feed")
-  	@feeds = feed.entries.first(2)
+  	@posts = Announcement.all
 
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(5)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(5)
 
 	
 

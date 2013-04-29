@@ -46,39 +46,30 @@
 		</div>
 		<div class="container">
 			<div class="grid-8">
-				<% @feeds.each do |entry| %>
+				<% @posts.each do |entry| %>
 					<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
 						<div class="box">
 							<div class="clear"></div>
 								<div class="frame">
 									<div class="title-wrap"> 
-										<h2 class="entry-title"><%= link_to entry.title, entry.url %></h2>
+										<h2 class="entry-title"><%= link_to entry.title, entry.title %></h2>
 										<div class="title-meta">
-											<span> by <%= entry.author %> on <%= link_to entry.published.strftime("%B %-d, %Y"), entry.url %></span>
+											<span> by Administrator</span>
 										</div>
 									</div>	
 									<div class="post-content">	
-										<p><%= entry.summary %> <%= link_to "Read More >>",entry.url %></p>
+										<p><%= entry.body %> </p>
 
 									</div>
 									<div class="bar">
 										<div class="bar-frame clearfix">
 											<div class="meta-info">
 												<div class="share">
-													<!-- google plus -->
-													<a class="share-google" href="https://plus.google.com/share?url=<%=entry.url%>" onclick="window.open('https://plus.google.com/share?url=<%=entry.url%>','gplusshare','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;"><i class="mediaico-google"></i></a>
-
-													<!-- facebook -->
-													<a class="share-facebook" onclick="window.open('http://www.facebook.com/share.php?u=<%= entry.url %>','facebook','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://www.facebook.com/share.php?u=<%= entry.url %>" title="How NOT to Stress About Outsourcing Customer Service and Sit Back Like a Boss"  target="blank"><i class="mediaico-facebook"></i></a>
-
-													<!-- twitter -->
-													<a class="share-twitter" onclick="window.open('http://twitter.com/home?status=<%= entry.title %> - <%= entry.url %>','twitter','width=450,height=300,left='+(screen.availWidth/2-375)+',top='+(screen.availHeight/2-150)+'');return false;" href="http://twitter.com/home?status=<%= entry.title %> - <%= entry.url %>" title="<%= entry.title %>" target="blank"><i class="mediaico-twitter"></i></a>
-
-													
+													<%= link_to "LINK",entry.title %>		
 												</div>
 												<div class = "categories">
 													<span class="bar-comment">
-														<%= link_to "View Comments",entry.url+"/#disqus_thread" %>
+														<%= link_to "View Comments",entry.title+"/#disqus_thread" %>
 													</span>
 												</div>
 											</div>
@@ -92,13 +83,13 @@
 			<div class="grid-4 omega clearfix">
 				<div class="greybox latest tweet">
 					<h2 class="twitter-text"> Tweets </h2>
-					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
+					<%# @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 
 						<div class="tweet-box clearfix">
 							<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
-							<p class="tweet"><%= tweet.summary %></p>
+							<p class="tweet"><%#= tweet.summary %></p>
 						</div>
-					<% end %> 
+					<%# end %> 
 					<div class = "clearfix">
 						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
 					</div>
