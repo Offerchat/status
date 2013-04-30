@@ -21,7 +21,7 @@ class StatusController < ApplicationController
     	announce("We got a serious problem here, mate.","Both the Chat Server and the Offerchat site are down. We are doing our best to fix this. We're sorry for the inconvenience.")
     end
 
-	@posts = Announcement.order("created_at ASC").first(3)
+	@posts = Announcement.order("created_at DESC").first(3)
 
   end
 
@@ -39,12 +39,12 @@ class StatusController < ApplicationController
 	  	if first.body != message
 	  		post = Announcement.new(:title => "#{title}", :body => "#{message}")
 	  		post.save
-	  		Twitter.update("[Update:" + Date.today.strftime("%B %d ") + Time.now.strftime("%I:%M")+"] #{message}" )
+	  		Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
 	  	end
 	else
 		post = Announcement.new(:title => "#{title}", :body => "#{message}")
 	  	post.save
-	  	Twitter.update("[Update:" + Date.today.strftime("%B %d ") + Time.now.strftime("%I:%M")+"] #{message}" )
+	  	Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
 	end
 
   end
