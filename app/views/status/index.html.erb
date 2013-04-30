@@ -8,7 +8,6 @@
 </div>
 <div class="blockz inner body-container">
 	<div class="section">
-
 		<div class="block clearfix">
 			<div class="container">
 				<div class="grid-6">
@@ -16,6 +15,7 @@
 						<center>
 							<% if @site %>
 								<i class="ico-live"></i> 
+								
 								<%= image_tag("website.png") %>
 					          	<h2><small><strong>Site <br> ALIVE AND KICKIN!</strong></small></h2> 
 					        <% else    %>
@@ -47,7 +47,8 @@
 		<div class="container" id="announcements">
 			<div class="grid-8">
 				<div>
-					<h1>Announcements!</h1>
+
+					<h1>Announcements!</h1><br>
 				</div>
 				<% @posts.each do |entry| %>
 					<div class="post-940 post type-post status-publish format-standard hentry category-articles tag-customer-service-outsourcing">
@@ -81,11 +82,12 @@
 									</div>
 								</div>
 						</div>
-					</div>
+					</div>	
 				<% end 					%>	
+			
 			</div>
 			<div class="grid-4 omega clearfix">
-				<div class="greybox latest tweet">
+				<div class="lgreybox latest tweet">
 					<h2 class="twitter-text"> Tweets </h2>
 					<%# @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 
