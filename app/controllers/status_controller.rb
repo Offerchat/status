@@ -8,8 +8,11 @@ class StatusController < ApplicationController
   	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
   	#@tweets = tweet.entries.first(5)
 
-
-
+  	begin
+  		Twitter.update("[Update:" + Date.today.strftime("%B %d ") + Time.now.strftime("%I:%M")+"] welcome to offerchat!" )
+  	rescue Twitter::Error::Forbidden
+  	end
+  	
 
   	@site = pingSite
 	    
