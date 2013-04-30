@@ -5,22 +5,24 @@ class StatusController < ApplicationController
   def index
   	@posts = Announcement.all
 
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(5)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(5)
 
 	
 
   	@site = pingSite
 	    
     @server = pingServer
+
+    #Twitter.update("I'm tweeting with @gem!")
 	 
   end
 
   def view
   	@post = Announcement.find(params[:id])
 
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(2)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(2)
   end
 
   def pingSite
