@@ -5,8 +5,8 @@ class StatusController < ApplicationController
   def index
   	@posts = Announcement.order("created_at DESC").first(3)
 
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(5)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(5)
 
 
 
@@ -20,8 +20,8 @@ class StatusController < ApplicationController
   def view
   	@post = Announcement.find(params[:id])
 
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(5)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(5)
   end
 
 
