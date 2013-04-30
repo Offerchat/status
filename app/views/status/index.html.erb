@@ -13,7 +13,7 @@
 				<div class="grid-6">
 					<div class="statusbox"> 
 						<center>
-							<% if @site %>
+							<% if @site_is_up %>
 								<i class="ico-live"></i> 
 								
 								<%= image_tag("website.png") %>
@@ -29,7 +29,7 @@
 				<div class="grid-6">
 					<div class="statusbox">
 						<center>
-							<% if @server %>
+							<% if @server_is_up %>
 								<i class="ico-live"></i> 
 								<%= image_tag("server.png") %>
 					          	<h2><small><strong>Chat Server <br> ALIVE AND KICKIN!</strong></small></h2> 
@@ -59,7 +59,7 @@
 										<h2 class="entry-title"><%= link_to entry.title, status_view_path(:id => entry.id) %></h2>
 										<div class="title-meta">
 											<span> by Administrator</span>
-											<span> on <%= entry.created_at.strftime("%B %d at %I:%M %p") %></span>
+											<span> on <%= entry.created_at.strftime("%B %d %Y") %></span>
 										</div>
 									</div>	
 									<div class="post-content">	
