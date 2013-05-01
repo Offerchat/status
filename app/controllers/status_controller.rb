@@ -9,6 +9,7 @@ class StatusController < ApplicationController
   	@site_is_up = pingSite
     @server_is_up = pingServer
 
+
     
 	    if @site_is_up and @server_is_up #both are true
 	    	if Announcement.where(:auto => true).count % 2 === 1
@@ -39,7 +40,7 @@ class StatusController < ApplicationController
   	first = Announcement.where(:auto => true).order("created_at DESC").first()
   	
 	if first
-		if first.body != message
+		if first.body != message 
 		  		post = Announcement.new(:title => "#{title}", :body => "#{message}" ,:auto=>true )
 		  		post.save
 		  		Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
