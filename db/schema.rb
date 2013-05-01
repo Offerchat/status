@@ -49,8 +49,9 @@ ActiveRecord::Schema.define(:version => 20130429025727) do
   create_table "announcements", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "auto",       :default => false
   end
 
 end
