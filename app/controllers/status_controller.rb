@@ -6,13 +6,12 @@ class StatusController < ApplicationController
   	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
   	@tweets = tweet.entries.first(5)
 
-
   	@site_is_up = pingSite
     @server_is_up = pingServer
 
     
 	    if @site_is_up and @server_is_up #both are true
-	    	unless Announcement.count === 0
+	    	if Announcement.where(:auto => true).count % 2 === 1
 	    		announce("We're back in business!","All systems are up. We're sorry for the inconvenience.")
 	    	end
 	    elsif @site_is_up and !@server_is_up #site is up, server down
@@ -20,7 +19,7 @@ class StatusController < ApplicationController
 	    elsif !@site_is_up and @server_is_up #site is down, server up
 	    	announce("Offerchat Connection Problems","We are experiencing some connection issues with Offerchat. Our developers are working on that.")
 	    elsif !@site_is_up and !@server_is_up #both are down
-	    	announce("We got a serious problem here, mate.","Both the Chat Server and the Offerchat site are down. We are doing our best to fix this. We're sorry for the inconvenience.")
+	    	announce("We got a serious problem here, mate.","Both the Chat Server and the Offerchat site are down. We are doing our best to fix this.")
 	    end
 	
 
@@ -37,18 +36,18 @@ class StatusController < ApplicationController
   end
 
   def announce(title,message)
-  	first = Announcement.order("created_at DESC").first()
+  	first = Announcement.where(:auto => true).order("created_at DESC").first()
   	
 	if first
-	  	if first.body != message
-	  		post = Announcement.new(:title => "#{title}", :body => "#{message}")
-	  		post.save
-	  		Twitter.update("[Update:" + Date.today.strftime("%B %d ") + Time.now.strftime("%I:%M")+"] #{message}" )
-	  	end
+		if first.body != message
+		  		post = Announcement.new(:title => "#{title}", :body => "#{message}" ,:auto=>true )
+		  		post.save
+		  		Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
+		end
 	else
-		post = Announcement.new(:title => "#{title}", :body => "#{message}")
+		post = Announcement.new(:title => "#{title}", :body => "#{message}", :auto=>true)
 	  	post.save
-	  	Twitter.update("[Update:" + Date.today.strftime("%B %d ") + Time.now.strftime("%I:%M")+"] #{message}" )
+	  	Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
 	end
 
   end

@@ -50,6 +50,18 @@
 
 					<h1>Announcements!</h1><br>
 				</div>
+				<% if @posts.blank? %>
+					<div class="post">
+						<div class="box">
+							<div class="clear"></div>
+								<div class="frame">
+									<div class="title-wrap"> 
+										<h3 class="entry-title"><center>There are no Announcements yet.</center></h3>
+									</div>	
+								</div>
+						</div>
+					</div>
+				<% end %>	
 				<% @posts.each do |entry| %>
 					<div class="post">
 						<div class="box">
