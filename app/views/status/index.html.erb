@@ -72,24 +72,11 @@
 										<div class="title-meta">
 											<span> by Administrator</span>
 											<span> on <%= entry.created_at.strftime("%B %d %Y") %></span>
+											<span><%= link_to "View Comments",status_view_path(:id => entry.id)+"#disqus_thread" %></span>
 										</div>
 									</div>	
 									<div class="post-content">	
 										<p><%= entry.body %> </p>
-									</div>
-									<div class="bar">
-										<div class="bar-frame clearfix">
-											<div class="meta-info">
-												<div class="share">
-													<%= link_to "LINK", status_view_path(:id => entry.id) %>		
-												</div>
-												<div class = "categories">
-													<span class="bar-comment">
-														<%= link_to "View Comments",status_view_path(:id => entry.id)+"#disqus_thread" %>
-													</span>
-												</div>
-											</div>
-										</div>
 									</div>
 								</div>
 						</div>
