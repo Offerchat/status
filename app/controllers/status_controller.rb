@@ -3,8 +3,8 @@ require 'uri'
 
 class StatusController < ApplicationController
   def index
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(5)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(5)
 
   	@site_is_up = pingSite
     @server_is_up = pingServer
@@ -32,8 +32,8 @@ class StatusController < ApplicationController
   def view
   	@post = Announcement.find(params[:id])
 
-  	tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
-  	@tweets = tweet.entries.first(5)
+  	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
+  	#@tweets = tweet.entries.first(5)
   end
 
   def announce(title,message)
@@ -69,6 +69,8 @@ class StatusController < ApplicationController
 		return false
 	rescue Errno::ECONNREFUSED
 		return false
+	rescue Errno::ETIMEDOUT
+		return false
 	end
 
 	if response.code.to_i === 200
@@ -89,6 +91,8 @@ class StatusController < ApplicationController
 	rescue Errno::ECONNREFUSED
 		return false
 	rescue Timeout::Error
+		return false
+	rescue Errno::ETIMEDOUT
 		return false
 	end
 
