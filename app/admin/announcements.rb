@@ -1,4 +1,6 @@
 ActiveAdmin.register Announcement do
+
+	scope :automatic
   	index do
 	    column "Title",:title
 	    column "Announcement",:body
