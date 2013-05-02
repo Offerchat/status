@@ -87,15 +87,15 @@
 			<div class="grid-4 omega clearfix">
 				<div class="lgreybox latest tweet">
 					<h5 class="twitter-text">Latest Tweets </h5> 
-					<%# @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
+					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 
 						<div class="tweet-box clearfix">
 							<%= image_tag("tweet-avatar.png", :class=>"tweet-avatar") %>
-							<p class="tweet"><%#= tweet.summary %></p>
+							<p class="tweet"><%= tweet.summary %></p>
 						</div>
-					<%# end %> 
+					<% end %> 
 					<div class = "clearfix">
-						<%#= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
+						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
 					</div>
 				</div>
 			</div>	
