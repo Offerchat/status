@@ -6,7 +6,7 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
   end
 
   def change
-    AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
+    #AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
     create_table(:admin_users) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
