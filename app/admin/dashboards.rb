@@ -1,6 +1,6 @@
 ActiveAdmin::Dashboards.build do
   section "Automatic Announcements" do
-    table_for Announcement.where(:auto => true).order("created_at desc").group(:title) do
+    table_for Announcement.where(:auto => true).order("created_at desc").group(:title, :body, :auto) do
       column :title
       column :body
     end
