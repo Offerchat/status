@@ -3,6 +3,7 @@ require 'uri'
 
 class StatusController < ApplicationController
   def index
+
   	#tweet = Feedzirra::Feed.fetch_and_parse("http://api.twitter.com/1/statuses/user_timeline.rss?screen_name=offerchat")
   	#@tweets = tweet.entries.first(5)
 

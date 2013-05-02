@@ -182,16 +182,15 @@ tr.odd {
 }
 
 body.active_admin #title_bar .action_items a {
-	-webkit-border-radius: 200px;
-	-moz-border-radius: 200px;
-	border-radius: 200px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 	display: inline-block;
-	font-weight: bold;
-	font-size: 1.0em;
-	font-family: Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	line-height: 12px;
 	margin-right: 3px;
-	padding: 7px 16px 6px;
 	text-decoration: none;
 	-webkit-font-smoothing: antialiased;
 	background: #e15119;
@@ -200,17 +199,33 @@ body.active_admin #title_bar .action_items a {
 	background: linear, -90deg, white, #e15119;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE7E7E7');
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE7E7E7');
-	box-shadow: none;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
 	border: solid 1px #e15119;
-	border-color: #e15119;
-	border-top-color: #e15119;
-	border-right-color: #e15119;
-	border-bottom-color: #e15119;
-	border-left-color: #e15119;
-	text-shadow: none;
-	color: black;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	color: #ffffff;
 	padding: 12px 17px 10px;
 	margin: 0px;
+}
+
+body.active_admin #title_bar .action_items a:not(.disabled):hover {
+	transition: background-position 0.1s linear;
+	-webkit-transition: background-position 0.1s linear;
+	background-position: 0 -15px;
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 14px;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	color: #ffffff;
+	background: #e15119;
+	background: -webkit-linear-gradient(-90deg, #e15119, #e15119);
+	background: -moz-linear-gradient(-90deg, #e15119, #e15119);
+	background: linear, -90deg, white, #e15119;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE7E7E7');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFE7E7E7');
 }
 
 body.active_admin table.dashboard .dashboard_section {
@@ -224,6 +239,7 @@ body.active_admin #title_bar h2 {
 	font-family: "PT Sans",sans-serif;
 	text-shadow: 0 1px 0 #fff;
 }
+
 
 body.active_admin form fieldset legend span {
 	background: -webkit-gradient(linear, left top, left bottom, from(#2266af), to(#1b5ea5));
@@ -309,5 +325,114 @@ body.active_admin .section > div, body.active_admin .panel > div {
 	box-shadow: none;
 }
 
+body.active_admin .panel_contents table tr.odd td {
+	background: white;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 10px 12px 8px 12px;
+}
 
+body.active_admin .panel_contents table tr.even td {
+	background: white;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 10px 12px 8px 12px;
+}
+
+body.active_admin table.index_table td {
+	padding: 10px 12px 8px 12px;
+	vertical-align: top;
+	background: white;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+body.active_admin table.index_table tr.even td {
+	background: white;
+}
+
+body.active_admin a.table_tools_button, body.active_admin .table_tools .dropdown_menu_button {
+	font-size: 11px;
+	display: inline-block;
+	font-family: Arial,sans-serif;
+	color: #565656;
+	cursor: pointer;
+	margin: 0 0 0 0;
+	text-align: center;
+	background: #f7f7f7;
+	text-shadow: 0 1px 0 #fff;
+	outline: none;
+	border: 1px solid #ccc;
+	padding: 4px 10px;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 #fff inset;
+	line-height: 16px;
+}
+
+body.active_admin .table_tools_segmented_control li:last-child a {
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+body.active_admin a.button, body.active_admin a:link.button, body.active_admin a:visited.button, body.active_admin input[type=submit] {
+	border-radius: 3px;
+}
+
+body.active_admin form input[type=submit] {
+	border-radius: 3px;
+}
+
+body.active_admin form.filter_form a.clear_filters_btn {
+	border-radius: 3px;
+}
+
+body.active_admin .table_tools_segmented_control li:first-child a {
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+body.active_admin form fieldset.actions li.cancel a {
+	border-radius: 3px;
+}
+
+body.active_admin.logged_in .flash.flash_notice {
+	background-color: #b0f4a8;
+	color:#2e4e2b;
+	text-shadow: 0 1px 0 #c2fabb;
+	background: -webkit-linear-gradient(-90deg, #b0f4a8, #b0f4a8);
+	text-align: center;
+}
+
+body.active_admin form fieldset > ol > li p.inline-errors {
+	color: black;
+}
+
+body.active_admin form fieldset > ol > li.error input[type=text], body.active_admin form fieldset > ol > li.error input[type=password], body.active_admin form fieldset > ol > li.error input[type=email], body.active_admin form fieldset > ol > li.error input[type=url], body.active_admin form fieldset > ol > li.error input[type=tel], body.active_admin form fieldset > ol > li.error textarea {
+	background-color: #ffc5c5;
+	border: 1px solid #c9d0d6;
+}
+
+body.active_admin.logged_out h2 {
+	background: #1a5da4;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2266af), to(#1b5ea5));
+	background: -moz-linear-gradient(top, #2266af, #1b5ea5);
+	background: linear, -90deg, #6a7176, #4d5256;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2266af', endColorstr='#1b5ea5');
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF6A7176', endColorstr='#FF4D5256');
+	border: solid 1px #cdcdcd;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-color: #d4d4d4;
+	border-top-color: #e6e6e6;
+	border-right-color: #d4d4d4;
+	border-bottom-color: #cdcdcd;
+	border-left-color: #d4d4d4;
+	font-size: 1.0em;
+	line-height: 18px;
+	margin-bottom: 0.5em;
+	color: white;
+	padding: 5px 10px 3px 10px;
+	text-shadow: none;
+}
+
+body.active_admin.logged_out #content_wrapper #active_admin_content {
+	border-radius: 10px;
+}
 
