@@ -2,7 +2,7 @@ ActiveAdmin::Dashboards.build do
   section "Automatic Announcements" do
     autos = Announcement.select('DISTINCT Announcements.title, Announcements.body').where(:auto => true)
     unless autos.blank?
-      table_for auto do
+      table_for autos do
         column :title
         column :body
       end
