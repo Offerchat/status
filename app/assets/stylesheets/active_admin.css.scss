@@ -419,7 +419,6 @@ body.active_admin.logged_out h2 {
 	background: linear, -90deg, #6a7176, #4d5256;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2266af', endColorstr='#1b5ea5');
 	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF6A7176', endColorstr='#FF4D5256');
-	border: solid 1px #cdcdcd;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	border-color: #d4d4d4;
@@ -452,5 +451,10 @@ body.active_admin.logged_out {
 
 body.active_admin.logged_out #login form fieldset input[type=text], body.active_admin.logged_out #login form fieldset input[type=email], body.active_admin.logged_out #login form fieldset input[type=password] {
 	margin-left: 20px;
+}
+
+body.active_admin.logged_out .flash {
+	text-shadow: none;
+	color: white;
 }
 
