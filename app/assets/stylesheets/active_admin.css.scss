@@ -453,8 +453,15 @@ body.active_admin.logged_out #login form fieldset input[type=text], body.active_
 	margin-left: 20px;
 }
 
+
 body.active_admin.logged_out .flash {
 	text-shadow: none;
 	color: white;
+}
+
+body.active_admin #footer {
+	padding: 30px 30px;
+	font-size: 0px;
+	clear: both;
 }
 
