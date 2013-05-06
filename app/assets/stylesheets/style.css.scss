@@ -374,12 +374,13 @@ box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);}
 .greybox h5{font-size: 16px; font-weight: normal; line-height: 1.5em;}
 .post{border-bottom: 2px solid #ccc;}
 .post:last-child{border: none;}
+
 .tweet-box img{float: left; padding-right: 10px; padding-top: 10px;}
-.tweet-box p.tweet{float:right;width:200px;position:relative;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
+.tweet-box p.tweet{float:right;width:200px;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
 .tweet-box p.tweets{float:right;width:212px;padding:10px;color:#8e8e8e;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px; position:relative;}
 .tweet-box p.tweet:after{content:"";position:absolute;border-style:solid;display:block;width:0;top:8px;left:-12px;bottom:auto;border-width:10px 15px 10px 0;border-color:transparent #fff}
 .tweet-box p.tweet span.tweet-time{font-size: 12px;text-align: right;display: block;font-style:italic;}
-.tweet-box{border-bottom: 1px solid #3AB7CB;}
+.tweet-box{ border-bottom: 1px solid #3AB7CB;}
 .pull-right{float: right; font-size:13px;}
 
 /*FAQ*/
@@ -423,8 +424,6 @@ border:none;
 }
 
 
-
-
 /*Status*/
 .lgreybox{background: #ffffff ; padding: 10px; margin-bottom: 20px;  font-family:'Open Sans','Helvetica Neue',Arial sans-serif;min-height:auto; border: 1px solid #E0E0E0;}
 .twitter-text{border-bottom: 1px solid #e0e0e0; padding-bottom:  10px;}
@@ -432,11 +431,6 @@ border:none;
 .statusbox .ico-down{position:absolute; left:280px; float:right; background: url('status.png') -67px 0px; width:62px; height:60px;}
 .statusbox {position:relative;}
 .imahe{border: 1px solid black;}
-.tweet
-
-
-
-
 
 
 .notify-box{background: #1a5ea5; padding:9px; }
