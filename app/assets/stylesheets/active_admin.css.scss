@@ -442,6 +442,15 @@ body.active_admin.logged_out #content_wrapper #active_admin_content {
 }
 
 body.active_admin.logged_out {
-	background: white;
-
+	background: url('/assets/coverpic.jpg') no-repeat center center fixed;
+	width: 100%;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
+
+body.active_admin.logged_out #login form fieldset input[type=text], body.active_admin.logged_out #login form fieldset input[type=email], body.active_admin.logged_out #login form fieldset input[type=password] {
+	margin-left: 20px;
+}
+
