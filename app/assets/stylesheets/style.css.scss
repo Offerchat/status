@@ -376,9 +376,9 @@ box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);}
 .post:last-child{border: none;}
 
 .tweet-box img{float: left; padding-right: 10px; padding-top: 10px;}
-.tweet-box p.tweet{border-radius:5px;float:right;width:200px;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
+.tweet-box p.tweet{float:right;width:200px;padding:10px;color:#8e8e8e;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px}
 .tweet-box p.tweets{float:right;width:212px;padding:10px;color:#8e8e8e;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:12px; position:relative;}
-.tweet-box p.tweet:after{content:"";position:absolute;border-style:solid;display:block;width:0;top:8px;left:-12px;bottom:auto;border-width:10px 15px 10px 0;border-color:transparent #fff}
+.tweet-box p.tweet:after{content:"";position:absolute;border-style:solid;display:block;width:0;top:8px;left:-12px;bottom:auto;}
 .tweet-box p.tweet span.tweet-time{font-size: 12px;text-align: right;display: block;font-style:italic;}
 .tweet-box{ border-bottom: 1px solid #3AB7CB;}
 .pull-right{float: right; font-size:13px;}
@@ -430,7 +430,7 @@ border:none;
 .statusbox .ico-live{position:absolute; left:280px; float:right; background: url('status.png') 0 0 ; width:62px; height:60px;}
 .statusbox .ico-down{position:absolute; left:280px; float:right; background: url('status.png') -67px 0px; width:62px; height:60px;}
 .statusbox {position:relative;}
-.imahe{border: 1px solid black;}
+.commentview {float: right; padding: 0 25px 10px 0;}
 .twitter-follow-button {float:right;}
 
 
