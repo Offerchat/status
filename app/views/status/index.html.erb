@@ -17,7 +17,7 @@
 								<i class="ico-live"></i> 
 								
 								<%= image_tag("website.png") %>
-					          	<h2><small><strong>Site <br> ALIVE AND KICKIN!</strong></small></h2> 
+					          	<h2><small><strong>Site <br> ALL SYSTEMS GO!</strong></small></h2> 
 					        <% else    %>
 					        	<i class="ico-down"></i> 
 					          	<%= image_tag("website.png") %>
@@ -31,11 +31,11 @@
 						<center>
 							<% if @server_is_up %>
 								<i class="ico-live"></i> 
-								<%= image_tag("server.png") %>
-					          	<h2><small><strong>Chat Server <br> ALIVE AND KICKIN!</strong></small></h2> 
+								<%= image_tag("server1.png") %>
+					          	<h2><small><strong>Chat Server <br> ALL SYSTEMS GO!</strong></small></h2> 
 					        <% else    %>
 					        	<i class="ico-down"></i> 
-					            <%= image_tag("server.png") %>
+					            <%= image_tag("server1.png") %>
 					          	<h2><small><strong>Chat Server <br> DEAD </strong></small></h2>
 					        <%  end   %>
 						</center>
@@ -86,7 +86,9 @@
 			</div>
 			<div class="grid-4 omega clearfix">
 				<div class="lgreybox latest tweet">
-					<h5 class="twitter-text">Latest Tweets </h5> 
+					<h5 class="twitter-text">Latest Tweets <a href="https://twitter.com/offerchatstatus" class="twitter-follow-button" data-show-count="false" data-width="" data-lang="en">@offerchat</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></h5> 
+					
 					<% @tweets.each do|tweet| tweet.summary.slice! "offerchat: "%>
 
 						<div class="tweet-box clearfix">
@@ -96,6 +98,7 @@
 					<% end %> 
 					<div class = "clearfix">
 						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
+						
 					</div>
 				</div>
 			</div>	
