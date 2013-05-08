@@ -14,14 +14,13 @@
 					<div class="statusbox"> 
 						<center>
 							<% if @site_is_up %>
-								<i class="ico-live"></i> 
-								
+								<i class="ico-live"></i>
 								<%= image_tag("website.png") %>
-					          	<h2><small><strong>Site <br> ALL SYSTEMS GO!</strong></small></h2> 
+					          	<h2><small><strong>Website <br> ALL SYSTEMS GO!</strong></small></h2> 
 					        <% else    %>
 					        	<i class="ico-down"></i> 
 					          	<%= image_tag("website.png") %>
-					          	<h2><small><strong>Site <br> DEAD </strong></small></h2>
+					          	<h2><small><strong>Website <br> DEAD </strong></small></h2>
 					        <%  end   %>	
 						</center>
 					</div>
@@ -44,12 +43,11 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="container" id="announcements">
+		<div class="container">
+			<div class="grid-12">
+				<h1>Announcements!</h1><br>
+			</div>
 			<div class="grid-8">
-				<div>
-
-					<h1>Announcements!</h1><br>
-				</div>
 				<% if @posts.blank? %>
 					<div class="post">
 						<div class="box">
@@ -85,7 +83,6 @@
 						</div>
 					</div>	
 				<% end 					%>	
-			
 			</div>
 			<div class="grid-4 omega clearfix">
 				<div class="lgreybox latest tweet">
@@ -103,6 +100,9 @@
 						<%= link_to "Join the Conversation", "http://twitter.com/offerchat", :class =>"pull-right" %>
 						
 					</div>
+				</div>
+				<div>
+					<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2Fpages%2FOfferchat%2F233267793462955&amp;width=292&amp;height=290&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color=%23E0E0E0+&amp;header=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:290px;" allowTransparency="true"></iframe>
 				</div>
 			</div>	
 		</div>
