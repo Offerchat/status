@@ -14,7 +14,8 @@
 					<div class="statusbox"> 
 						<center>
 							<% if @site_is_up %>
-								<i class="ico-live"></i>
+								<!--<i class="ico-live"></i>-->
+								<%= image_tag("alive.gif", :class=>"ico-live") %>
 								<%= image_tag("website.png") %>
 					          	<h2><small><strong>Website <br> ALL SYSTEMS GO!</strong></small></h2> 
 					        <% else    %>
