@@ -8,7 +8,7 @@ class StatusController < ApplicationController
   	@tweets = tweet.entries.first(5)
 
   	@site_is_up = pingSite
-    @server_is_up = pingServer
+    @server_is_up = pingServer 
 
 
     
@@ -41,14 +41,14 @@ class StatusController < ApplicationController
   	
 	if first
 		if first.body != message 
-		  		post = Announcement.new(:title => "#{title}", :body => "#{message}" ,:auto=>true )
+		  		post = Announcement.new(:title => "#{title}", :body => "#{message}" ,:auto=>true, :created_at=>Time.now.strftime("%B %d, %Y %I:%M %p") )
 		  		post.save
-		  		Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
+		  		Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M %p")+"] #{message}" )
 		end
 	else
 		post = Announcement.new(:title => "#{title}", :body => "#{message}", :auto=>true)
 	  	post.save
-	  	Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M")+"] #{message}" )
+	  	Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M %p")+"] #{message}" )
 	end
 
   end
