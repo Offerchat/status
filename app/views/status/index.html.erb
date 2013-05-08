@@ -44,7 +44,7 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="container" id="announcements">
+		<div class="container">
 			<div class="grid-8">
 				<div>
 
@@ -62,26 +62,10 @@
 						</div>
 					</div>
 				<% end %>	
-				<% @posts.each do |entry| %>
-					<div class="post">
-						<div class="box">
-							<div class="clear"></div>
-								<div class="frame">
-									<div class="title-wrap"> 
-										<h2 class="entry-title"><%= link_to entry.title, status_view_path(:id => entry.id) %></h2>
-										<div class="title-meta">
-											<span> by Administrator</span>
-											<span> on <%= entry.created_at.strftime("%B %d %Y") %></span>
-											<span><%= link_to "View Comments",status_view_path(:id => entry.id)+"#disqus_thread" %></span>
-										</div>
-									</div>	
-									<div class="post-content">	
-										<p><%= entry.body %> </p>
-									</div>
-								</div>
-						</div>
-					</div>	
-				<% end 					%>	
+				
+				<div id="announcements">
+					<%= render 'announcements' %>
+				</div>
 			
 			</div>
 			<div class="grid-4 omega clearfix">

@@ -23,9 +23,8 @@ class StatusController < ApplicationController
 	    elsif !@site_is_up and !@server_is_up #both are down
 	    	announce("We got a serious problem here, mate.","Both the Chat Server and the Offerchat site are down. We are doing our best to fix this.")
 	    end
-	
 
-	@posts = Announcement.order("created_at DESC").first(3)
+	@posts = Announcement.paginate(:order => "created_at DESC", :per_page => 3, :page => params[:page])
 
   end
 
