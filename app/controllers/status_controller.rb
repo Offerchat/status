@@ -13,7 +13,7 @@ class StatusController < ApplicationController
 
     
 	    if @site_is_up and @server_is_up #both are true
-	    	if Announcement.where(:auto => true).count % 2 === 1
+	    	if Announcement.where(:auto => true).last.title != "We're back in business!"
 	    		announce("We're back in business!","All systems are up. We're sorry for the inconvenience.")
 	    	end
 	    elsif @site_is_up and !@server_is_up #site is up, server down
@@ -41,14 +41,14 @@ class StatusController < ApplicationController
   	
 	if first
 		if first.body != message 
-		  		post = Announcement.new(:title => "#{title}", :body => "#{message}" ,:auto=>true, :created_at=>Time.now.strftime("%B %d, %Y %I:%M %p") )
+		  		post = Announcement.new(:title => "#{title}", :body => "#{message}" ,:auto=>true)
 		  		post.save
-		  		Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M %p")+"] #{message}" )
+		  		Twitter.update("[Update:" + post.created_at.strftime("%B %d-%I:%M %p") + "] #{message}")
 		end
 	else
 		post = Announcement.new(:title => "#{title}", :body => "#{message}", :auto=>true)
 	  	post.save
-	  	Twitter.update("[Update:" + Date.today.strftime("%B %d") + Time.now.strftime("-%I:%M %p")+"] #{message}" )
+	  	Twitter.update("[Update:" + post.created_at.strftime("%B %d-%I:%M %p") + "] #{message}")
 	end
 
   end
